@@ -5,37 +5,69 @@
 <title>Game Hub</title>
 
 <style>
+
 body{
-background:#111;
+background:#0f0f0f;
 color:white;
 font-family:Arial;
 text-align:center;
 }
 
 h1{
-margin-top:30px;
+margin-top:20px;
+}
+
+#search{
+width:300px;
+padding:10px;
+margin-top:20px;
+border-radius:6px;
+border:none;
 }
 
 .games{
 display:grid;
-grid-template-columns:repeat(auto-fit,200px);
-justify-content:center;
+grid-template-columns:repeat(auto-fit,180px);
 gap:20px;
+justify-content:center;
 margin-top:40px;
 }
 
 .game{
-background:#222;
-padding:20px;
+background:#1c1c1c;
 border-radius:10px;
+padding:10px;
+transition:0.2s;
+}
+
+.game:hover{
+transform:scale(1.05);
+}
+
+.game img{
+width:160px;
+height:100px;
+border-radius:6px;
 }
 
 a{
 color:white;
 text-decoration:none;
-font-size:18px;
 }
+
 </style>
+
+<script>
+function searchGames() {
+let input = document.getElementById("search").value.toLowerCase();
+let games = document.getElementsByClassName("game");
+
+for (let i = 0; i < games.length; i++) {
+let title = games[i].innerText.toLowerCase();
+games[i].style.display = title.includes(input) ? "block" : "none";
+}
+}
+</script>
 
 </head>
 
@@ -43,34 +75,43 @@ font-size:18px;
 
 <h1>Game Hub</h1>
 
+<input id="search" onkeyup="searchGames()" placeholder="Search games...">
+
 <div class="games">
 
 <div class="game">
-<a href="https://play2048.co/">2048</a>
+<a href="https://classic.minecraft.net/">
+<img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+<p>Minecraft Classic</p>
+</a>
 </div>
 
 <div class="game">
-<a href="https://neal.fun/infinite-craft/">Infinite Craft</a>
+<a href="https://tetris.com/play-tetris">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Tetris_Gameplay.png">
+<p>Tetris</p>
+</a>
 </div>
 
 <div class="game">
-<a href="https://classic.minecraft.net/">Minecraft Classic</a>
+<a href="https://cookieclicker.ee/">
+<img src="https://upload.wikimedia.org/wikipedia/en/0/02/Cookie_Clicker_logo.png">
+<p>Cookie Clicker</p>
+</a>
 </div>
 
 <div class="game">
-<a href="https://cookieclicker.ee/">Cookie Clicker</a>
+<a href="https://slither.io/">
+<img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Slither.io.jpg">
+<p>Slither.io</p>
+</a>
 </div>
 
 <div class="game">
-<a href="https://slither.io/">Slither.io</a>
-</div>
-
-<div class="game">
-<a href="https://agar.io/">Agar.io</a>
-</div>
-
-<div class="game">
-<a href="https://www.crazygames.com/game/tiny-fishing">Tiny Fishing</a>
+<a href="https://agar.io/">
+<img src="https://upload.wikimedia.org/wikipedia/en/1/1b/Agar.io_app_icon.png">
+<p>Agar.io</p>
+</a>
 </div>
 
 </div>
