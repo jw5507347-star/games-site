@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Game Hub</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+h1{
+margin-top:30px;
+}
+
+.games{
+display:grid;
+grid-template-columns:repeat(auto-fit,200px);
+justify-content:center;
+gap:20px;
+margin-top:40px;
+}
+
+.game{
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+
+a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+</style>
+
 </head>
 
 <body>
-<h1>My Game Hub</h1>
 
-<a href="https://examplegame.com">Game 1</a><br>
-<a href="https://examplegame2.com">Game 2</a><br>
+<h1>Game Hub</h1>
+
+<div class="games">
+
+<div class="game">
+<a href="https://play2048.co/">2048</a>
+</div>
+
+<div class="game">
+<a href="https://neal.fun/infinite-craft/">Infinite Craft</a>
+</div>
+
+<div class="game">
+<a href="https://classic.minecraft.net/">Minecraft Classic</a>
+</div>
+
+<div class="game">
+<a href="https://tetris.com/play-tetris">Tetris</a>
+</div>
+
+</div>
 
 </body>
 </html>
